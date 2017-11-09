@@ -1,9 +1,7 @@
-wcs_hack_commande:
-    resource: "@WCSHackBundle/Controller/commandeController.php"
+wcs_hack_controllers:
+    resource: "@WCSHackBundle/Controller/"
     type:     annotation
 
 wcs_hack:
     resource: "@WCSHackBundle/Resources/config/routing.yml"
     prefix:   /
-
-
