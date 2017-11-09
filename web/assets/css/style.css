@@ -31,6 +31,10 @@
     background-color: #FAF6EB;
 }
 
+.centre-bouton {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
 }
