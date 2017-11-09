@@ -1,5 +1,4 @@
-
-body {
+ body {
     background-image: url("/image/pattern.jpg");
 }
 
@@ -92,9 +91,4 @@ a:hover {
 .formulaire .btn {
     font-size: 1.3em;
 }
-
-
-
-
-
 

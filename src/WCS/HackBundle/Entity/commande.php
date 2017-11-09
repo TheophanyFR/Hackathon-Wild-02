@@ -21,6 +21,7 @@ class commande
      */
     private $id;
 
+
     /**
      * @var string
      *
@@ -62,6 +63,12 @@ class commande
      * @ORM\Column(name="statut", type="integer")
      */
     private $statut;
+    /**
+     * @ORM\OneToOne(targetEntity="panier")
+     * @ORM\JoinColumn(name="panier_id", referencedColumnName="id")
+     */
+    private $panier;
+
 
 
     /**
@@ -216,5 +223,29 @@ class commande
     public function getStatut()
     {
         return $this->statut;
+    }
+
+    /**
+     * Set panier
+     *
+     * @param \WCS\HackBundle\Entity\panier $panier
+     *
+     * @return commande
+     */
+    public function setPanier(\WCS\HackBundle\Entity\panier $panier = null)
+    {
+        $this->panier = $panier;
+
+        return $this;
+    }
+
+    /**
+     * Get panier
+     *
+     * @return \WCS\HackBundle\Entity\panier
+     */
+    public function getPanier()
+    {
+        return $this->panier;
     }
 }
