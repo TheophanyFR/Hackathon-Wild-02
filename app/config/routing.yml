@@ -1,5 +1,0 @@
-wcs_hack:
-    resource: "@WCSHackBundle/Resources/config/routing.yml"
-    prefix:   /
-
-
