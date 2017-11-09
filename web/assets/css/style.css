@@ -1,3 +1,54 @@
 body {
-    background-color: rosybrown;
+    background-image: url("/image/pattern.jpg");
+}
+
+.jumbotron {
+    background-color: #FAF6EB;
+    color: #1B5350;
+}
+
+.thumbnail {
+    background-color: #FAF6EB;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar {
+    background-color: #AFCAC1;
+    border: none;
+    border-radius: 0;
+    color: black;
+}
+
+.description {
+    background-color: white;
+    color: #1B5350;
+    padding: 4vh;
+    margin-top: 0;
+}
+
+
+a h3 {
+    color: #1B5350;
+    text-align: center;
+    background-color: #FAF6EB;
+}
+
+a h3:hover {
+    text-decoration: none;
+    color : #C01920;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-default {
+    background-color: #AFCAC1;
+}
+
+.btn-default:hover {
+    background-color: #549091;
 }
