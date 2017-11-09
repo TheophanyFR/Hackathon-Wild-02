@@ -1,3 +1,4 @@
+
 wcs_hack_produit:
     resource: "@WCSHackBundle/Controller/produitController.php"
     type:     annotation
