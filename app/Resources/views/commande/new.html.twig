@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        <h1>Soumettre la commande</h1>
+    <div class="container FormEnfant">
+        <div class="jumbotron">
+            <h1>Soumettre la commande</h1>
+        </div>
 
-        <div class="row">
+        <div class="row formulaire">
             <div class="input-group">
                 {{ form_start(form) }}
             </div>
@@ -17,19 +19,14 @@
             <div class="input-group">
                 {{ form_row(form.adresse) }}
             </div>
-                <input type="button" value="Localiser" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
-                <div id="map-canvas" style="height:220px;width:45%"></div>
-                <input type="submit" value="Soumettre" style="margin-top: 10px"/>
-                {{ form_end(form) }}
+            <input type="button" value="Localiser" class="btn btn-warning" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
+            <div id="map-canvas" style="height:350px;width:45%"></div>
+            <input type="submit" value="Soumettre" class="btn btn-success" style="margin-top: 10px"/>
+            {{ form_end(form) }}
 
 
         </div>
 
 
-        <ul>
-            <li>
-                <a href="{{ path('commande_index') }}">Back to the list</a>
-            </li>
-        </ul>
     </div>
 {% endblock %}
