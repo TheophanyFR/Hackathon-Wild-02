@@ -15,25 +15,23 @@
             </tr>
         </thead>
         <tbody>
-        {% for produit in produits %}
-            <tr>
-                <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
-                <td>{{ produit.nom }}</td>
-                <td>{{ produit.description }}</td>
-                <td>{{ produit.image }}</td>
-                <td>{{ produit.temps }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('produit_show', { 'id': produit.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('produit_edit', { 'id': produit.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+        <div class="container">
+            <div class="row">
+                {% for produit in produits %}
+                    <div class="col-xs-6 col-md-3">
+                        <div class="thumbnail">
+                            <a href="{{ path('produit_show', { 'id': produit.id }) }}">
+                                <img src="/image/{{ produit.image }}">
+                                <p>{{ produit.nom }}</p>
+                                <p>{{ produit.temps }}</p>
+                                <a href="{{ path('produit_show', { 'id': produit.id }) }}">show</a>
+                                <a href="{{ path('produit_edit', { 'id': produit.id }) }}">edit</a>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         </tbody>
     </table>
 

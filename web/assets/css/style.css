@@ -1,3 +1,98 @@
-body {
-    background-color: rosybrown;
+ body {
+    background-image: url("/image/pattern.jpg");
 }
+
+.acceuil-navbar {
+    margin-left:25vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 2em;
+}
+
+.catalogue-navbar {
+    margin-right: 25vw;
+    font-size: 2em;
+    margin-top: 2vh;
+}
+
+.navbar {
+    background-color: #AFCAC1;
+    border: none;
+    border-radius: 0;
+    color: black;
+}
+
+.jumbotron {
+    background-color: #FAF6EB;
+    color: #1B5350;
+}
+
+.thumbnail {
+    background-color: #FAF6EB;
+}
+
+.centre-bouton {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.description {
+    background-color: white;
+    color: #1B5350;
+    padding: 4vh;
+    margin-top: 0;
+}
+
+
+a h3 {
+    color: #1B5350;
+    text-align: center;
+    background-color: #FAF6EB;
+}
+
+a h3:hover {
+    text-decoration: none;
+    color : #C01920;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-default {
+    background-color: #AFCAC1;
+}
+
+.btn-default:hover {
+    background-color: #549091;
+}
+
+.FormEnfant {
+    background-color: white;
+    padding: 0;
+
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.formulaire div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.formulaire label {
+    margin: 0 10px 0 0;
+    font-size: 1.5em;
+}
+
+.formulaire input {
+    margin: 10px;
+}
+
+.formulaire .btn {
+    font-size: 1.3em;
+}
+

@@ -24,7 +24,7 @@ class produit
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="text", nullable=true)
      */
     private $nom;
 
@@ -48,6 +48,9 @@ class produit
      * @ORM\Column(name="temps", type="integer")
      */
     private $temps;
+
+
+
 
 
     /**
@@ -155,4 +158,6 @@ class produit
     {
         return $this->temps;
     }
+
+
 }

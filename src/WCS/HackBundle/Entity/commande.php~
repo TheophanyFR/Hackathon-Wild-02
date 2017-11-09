@@ -21,6 +21,7 @@ class commande
      */
     private $id;
 
+
     /**
      * @var string
      *
@@ -62,6 +63,12 @@ class commande
      * @ORM\Column(name="statut", type="integer")
      */
     private $statut;
+    /**
+     * @ORM\OneToOne(targetEntity="panier")
+     * @ORM\JoinColumn(name="panier_id", referencedColumnName="id")
+     */
+    private $panier;
+
 
 
     /**

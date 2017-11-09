@@ -1,16 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Commande creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {% include 'header.html.twig' %}
 
-    <ul>
-        <li>
-            <a href="{{ path('commande_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="container FormEnfant">
+        <div class="jumbotron">
+            <h1>Soumettre la commande</h1>
+        </div>
+
+        <div class="row formulaire">
+            <div class="input-group">
+                {{ form_start(form) }}
+            </div>
+            <div class="input-group">
+                {{ form_row(form.nom) }}
+            </div>
+            <div class="input-group">
+                {{ form_row(form.prenom) }}
+            </div>
+            <div class="input-group">
+                {{ form_row(form.adresse) }}
+            </div>
+            <input type="button" value="Localiser" class="btn btn-warning" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
+            <div id="map-canvas" style="height:350px;width:45%"></div>
+            <input type="submit" value="Soumettre" class="btn btn-success" style="margin-top: 10px"/>
+            {{ form_end(form) }}
+            <a class="btn btn-default btn-lg" href="{{ path('produit_index') }}">Retour au catalogue</a>
+
+        </div>
+    </div>
 {% endblock %}
