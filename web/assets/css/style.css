@@ -1,6 +1,25 @@
-
-body {
+ body {
     background-image: url("/image/pattern.jpg");
+}
+
+.acceuil-navbar {
+    margin-left:25vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 2em;
+}
+
+.catalogue-navbar {
+    margin-right: 25vw;
+    font-size: 2em;
+    margin-top: 2vh;
+}
+
+.navbar {
+    background-color: #AFCAC1;
+    border: none;
+    border-radius: 0;
+    color: black;
 }
 
 .jumbotron {
@@ -12,15 +31,12 @@ body {
     background-color: #FAF6EB;
 }
 
-h1 {
+.centre-bouton {
     text-align: center;
 }
 
-.navbar {
-    background-color: #AFCAC1;
-    border: none;
-    border-radius: 0;
-    color: black;
+h1 {
+    text-align: center;
 }
 
 .description {
@@ -79,9 +95,4 @@ a:hover {
 .formulaire .btn {
     font-size: 1.3em;
 }
-
-
-
-
-
 
