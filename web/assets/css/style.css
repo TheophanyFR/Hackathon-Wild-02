@@ -3,6 +3,26 @@ body {
     background-image: url("/image/pattern.jpg");
 }
 
+.acceuil-navbar {
+    margin-left:25vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 2em;
+}
+
+.catalogue-navbar {
+    margin-right: 25vw;
+    font-size: 2em;
+    margin-top: 2vh;
+}
+
+.navbar {
+    background-color: #AFCAC1;
+    border: none;
+    border-radius: 0;
+    color: black;
+}
+
 .jumbotron {
     background-color: #FAF6EB;
     color: #1B5350;
@@ -14,13 +34,6 @@ body {
 
 h1 {
     text-align: center;
-}
-
-.navbar {
-    background-color: #AFCAC1;
-    border: none;
-    border-radius: 0;
-    color: black;
 }
 
 .description {

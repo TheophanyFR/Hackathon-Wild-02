@@ -17,7 +17,7 @@
                         <a href="{{ path('produit_show', { 'id': produit.id }) }}">
                             <img class="img-responsive" src="/image/{{ produit.image }}">
                             <h3>{{ produit.nom }}</h3>
-                            <a class="btn btn-default glyphicon glyphicon-shopping-cart"
+                            <a class="btn btn-default glyphicon glyphicon-gift"
                                href="{{ path('commande_new') }}"> Prendre ce cadeau</a>
                             <a class="btn btn-default" href="{{ path('produit_show', { 'id': produit.id }) }}">Voir le produit</a>
                         </a>
