@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace WCS\HackBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class WCSHackBundle extends Bundle
 {
 }
