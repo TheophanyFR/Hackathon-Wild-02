@@ -26,7 +26,7 @@ class produitController extends Controller
 
         $produits = $em->getRepository('WCSHackBundle:produit')->findAll();
 
-        return $this->render('produit/index.html.twig', array(
+        return $this->render('produit/produit.html.twig', array(
             'produits' => $produits,
         ));
     }
@@ -67,7 +67,7 @@ class produitController extends Controller
     {
         $deleteForm = $this->createDeleteForm($produit);
 
-        return $this->render('produit/show.html.twig', array(
+        return $this->render('produit/oneproduit.html.twig', array(
             'produit' => $produit,
             'delete_form' => $deleteForm->createView(),
         ));

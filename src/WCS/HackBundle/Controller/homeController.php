@@ -4,10 +4,10 @@ namespace WCS\HackBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class homeController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('WCSHackBundle:Default:index.html.twig');
+        return $this->render('::index.html.twig');
     }
 }
