@@ -32,4 +32,3 @@ class panier
         return $this->id;
     }
 }
-

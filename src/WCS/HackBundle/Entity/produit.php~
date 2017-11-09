@@ -156,4 +156,3 @@ class produit
         return $this->temps;
     }
 }
-
