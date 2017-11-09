@@ -1,0 +1,3 @@
+wcs_hack_homepage:
+    path:     /
+    defaults: { _controller: WCSHackBundle:Default:index }
