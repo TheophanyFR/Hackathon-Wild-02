@@ -2,61 +2,53 @@
 
 {% block body %}
 
-<div class="container">
-    <div class="row">
-        <div class="jumbotron">
-            <h1>Commande</h1>
-    <table>
-        <tbody>
-        <tr>
-            <th>Produit</th>
-            <td>{{ produit.nom }}</td>
-        </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ commande.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ commande.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ commande.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Adresse</th>
-                <td>{{ commande.adresse }}</td>
-            </tr>
-            <tr>
-                <th>Longitude</th>
-                <td>{{ commande.longitude }}</td>
-            </tr>
-            <tr>
-                <th>Latitude</th>
-                <td>{{ commande.latitude }}</td>
-            </tr>
-            <tr>
-                <th>Statut</th>
-                <td>{{ commande.statut }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('commande_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron page-recap">
+                <h1>Ce que je reçois pour Noël</h1>
+                <div class="thumbnail thumrecap">
+                    <img class="img-responsive" src="/image/{{ produit.image }}">
+                </div>
+            <div class="col-lg-offset-4 col-lg-4 text-recap">
+            <h2>Patience Noël arrive à grand pas !</h2>
+            <h2 id="demo"></h2>
+                    <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}">Retour à la Hotte</a>
+            </div>
+            </div>
         </div>
-    </div>
-</div>
+        </div>
+
+
+    {% block timer %}
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Dec 24, 2017 23:59:59").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+    {% endblock %}
 {% endblock %}
