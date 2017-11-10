@@ -18,7 +18,7 @@
                             <img class="img-responsive" src="/image/{{ produit.image }}">
                             <h3>{{ produit.nom }}</h3>
                             <p class="centre-bouton"><a class="btn btn-default"
-                               href="{{ path('commande_new', { 'id': produit.id }) }}"><span class="glyphicon glyphicon-gift"></span> Prendre ce cadeau</a></p>
+                               href="/commande/new/{{  produit.id }}"><span class="glyphicon glyphicon-gift"></span> Prendre ce cadeau</a></p>
                             <p class="centre-bouton"><a class="btn btn-default" href="{{ path('produit_show', { 'id': produit.id }) }}">Voir le produit</a></p>
                         </a>
                     </div>

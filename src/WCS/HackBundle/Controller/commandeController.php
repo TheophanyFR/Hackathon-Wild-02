@@ -6,6 +6,7 @@ use WCS\HackBundle\Entity\commande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use WCS\HackBundle\Entity\produit;
 
 /**
  * Commande controller.
@@ -34,17 +35,19 @@ class commandeController extends Controller
     /**
      * Creates a new commande entity.
      *
-     * @Route("/new", name="commande_new")
+     * @Route("/new/{id}", name="commande_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(produit $produit, Request $request)
     {
-        $commande = new Commande();
-        $form = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
-        $form->handleRequest($request);
+        $commande = new commande();
 
+        $form = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
+
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $commande->setProduit($produit->getId());
             $em->persist($commande);
             $em->flush();
 
@@ -53,6 +56,7 @@ class commandeController extends Controller
 
         return $this->render('commande/new.html.twig', array(
             'commande' => $commande,
+            'produit'=>$produit,
             'form' => $form->createView(),
         ));
     }
@@ -133,4 +137,6 @@ class commandeController extends Controller
             ->getForm()
         ;
     }
+
+
 }
