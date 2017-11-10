@@ -20,7 +20,7 @@ body {
 }
 
 .bodyPapa {
-    background-color: #333333;
+    background-image: url("/image/papa_pattern.jpg");
 }
 
 /* Start navbar */
@@ -66,6 +66,10 @@ div.container-fluid {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
+.max-view-height {
+    height: 100vh;
+}
+
 .accueil-intro {
     background-color: #FAF6EB;
     color: #dd4444;
@@ -74,6 +78,11 @@ div.container-fluid {
 .textintro {
     text-align: center;
     color: #1B5350;
+    font-family: Merienda;
+}
+
+.margin-top-title {
+    margin-top: 80px;
 }
 
 #demo {
@@ -260,9 +269,7 @@ p.credo {
 p.delation{
     font-size: 5em;
 }
-.page-recap {
-    height:100vh;
-}
+
 /*start footer css*/
 
 h2 {
