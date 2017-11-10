@@ -10,10 +10,8 @@
         <h1>{{ produit.nom }}</h1>
     </div>
         <div class="row">
-            <div class="col-xs-6 col-md-6">
+            <div class="thumbnail one-produit">
                 <img class="img-responsive" src="/image/{{ produit.image }}">
-            </div>
-            <div class="col-xs-6 col-md-6">
                 <h3 class="description">{{ produit.description }}</h3>
                 <form action="{{ path('commande_new', {'id':produit.id}) }}" method="get">
                 <a class="btn btn-default"
