@@ -1,5 +1,6 @@
 body {
     background-image: url("/image/pattern.jpg");
+    z-index: 0;
 }
 
 .bodyElfe {
@@ -119,6 +120,11 @@ a:hover {
     font-size: 1.3em;
 }
 
+.formthumb {
+    background-color: white;
+    border:none;
+}
+
 .formulaire div {
     margin: 0 auto;
     text-align: center;
@@ -135,6 +141,23 @@ a:hover {
 
 .formulaire .btn {
     font-size: 1.3em;
+}
+
+.btn-valid {
+    margin-top: 5vh;
+    background-color: #C01920;
+    color: white;
+}
+
+.btn-retour {
+    margin-bottom: 10vh;
+    background-color: #AFCAC1;
+    color: white;
+}
+
+.btn-local {
+    background-color: #AFCAC1;
+    color: white;
 }
 
 /*End Formulair*/
@@ -157,3 +180,22 @@ p {
     font-size: 15em;
 }
 
+.maroufle {
+    color: white;
+    border:none;
+    background-color: white;
+    top: 200px;
+    position: relative;
+}
+
+.page-recap {
+    height:100vh;
+}
+
+.text-recap {
+    text-align: center;
+}
+
+.thumrecap {
+    border:none;
+}
