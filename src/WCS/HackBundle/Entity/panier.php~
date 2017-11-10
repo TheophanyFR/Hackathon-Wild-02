@@ -21,13 +21,6 @@ class panier
      */
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="produit")
-     * @ORM\JoinColumn(name="produit_id", referencedColumnName="id")
-     */
-    private $produit;
-
-
 
     /**
      * Get id
@@ -140,5 +133,29 @@ class panier
     public function getProduit()
     {
         return $this->produit;
+    }
+
+    /**
+     * Add produit
+     *
+     * @param \WCS\HackBundle\Entity\produit $produit
+     *
+     * @return panier
+     */
+    public function addProduit(\WCS\HackBundle\Entity\produit $produit)
+    {
+        $this->produit[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit
+     *
+     * @param \WCS\HackBundle\Entity\produit $produit
+     */
+    public function removeProduit(\WCS\HackBundle\Entity\produit $produit)
+    {
+        $this->produit->removeElement($produit);
     }
 }
