@@ -73,7 +73,6 @@ a:hover {
 .FormEnfant {
     background-color: white;
     padding: 0;
-
     text-align: center;
     font-size: 1.3em;
 }
@@ -93,6 +92,13 @@ a:hover {
 }
 
 .formulaire .btn {
+    font-size: 1.3em;
+}
+
+.planning {
+    background-color: white;
+    padding: 0;
+    text-align: center;
     font-size: 1.3em;
 }
 
