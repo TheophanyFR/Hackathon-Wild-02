@@ -1,43 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
     <h1>Commandes list</h1>
 
-    <table>
+                {% for commande in commandes %}
+
+
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Adresse</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
                 <th>Statut</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for commande in commandes %}
             <tr>
-                <td><a href="{{ path('commande_show', { 'id': commande.id }) }}">{{ commande.id }}</a></td>
-                <td>{{ commande.nom }}</td>
-                <td>{{ commande.prenom }}</td>
-                <td>{{ commande.adresse }}</td>
-                <td>{{ commande.longitude }}</td>
-                <td>{{ commande.latitude }}</td>
+                <td>{{ commande.id }}</td>
                 <td>{{ commande.statut }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('commande_show', { 'id': commande.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('commande_edit', { 'id': commande.id }) }}">edit</a>
+                            <a href="{{ path('commande_show', { 'id': commande.id }) }}">Prendre cette commande de merde </a>
                         </li>
                     </ul>
                 </td>
             </tr>
-        {% endfor %}
         </tbody>
+        {% endfor %}
     </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
