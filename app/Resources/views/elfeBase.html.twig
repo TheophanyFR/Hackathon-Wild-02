@@ -1,42 +1,19 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-
-    {% include 'header.html.twig' %}
-
-    <div class="container FormEnfant">
-        <div class="jumbotron">
-            <h1>Soumettre la commande</h1>
-        </div>
-        <div class="thumbnail">
-            <img class="img-responsive" src="/image/{{ produit.image }}">
-            {{ produit.nom }}
-        </div>
-        <div class="row formulaire">
-            <div class="input-group">
-                {{ form_start(form) }}
-            </div>
-            <div class="input-group">
-                {{ produit.id }}
-            </div>
-            <div class="input-group">
-                {{ form_row(form.nom) }}
-            </div>
-            <div class="input-group">
-                {{ form_row(form.prenom) }}
-            </div>
-            <div class="input-group">
-                {{ form_row(form.adresse) }}
-            </div>
-            <input type="button" value="Localiser" class="btn btn-warning" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
-            <div id="map-canvas" style="height:350px;width:45%"></div>
-
-            <input type="submit" value="Soumettre" class="btn btn-success" style="margin-top: 10px"/>
-            {{ form_end(form) }}
-            <a class="btn btn-default btn-lg" href="{{ path('produit_index') }}">Retour au catalogue</a>
-
-        </div>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body class="bodyElfe">
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ3dmF57Y66ggbNIKdzWvFBBwIVgthszw"></script>
     <script type="text/javascript">
         var geocoder;
@@ -82,3 +59,5 @@
         google.maps.event.addDomListener(window, 'load', initialiserCarte);
     </script>
 {% endblock %}
+</body>
+</html>

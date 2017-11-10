@@ -6,6 +6,7 @@ use WCS\HackBundle\Entity\commande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use WCS\HackBundle\Entity\produit;
 
 /**
  * Commande controller.
@@ -25,26 +26,47 @@ class commandeController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $commandes = $em->getRepository('WCSHackBundle:commande')->findAll();
-
+        $produits = $em->getRepository('WCSHackBundle:commande')->findAll();
         return $this->render('commande/index.html.twig', array(
             'commandes' => $commandes,
+            'produits' => $produits,
+        ));
+    }
+
+    /**
+     * Lists all commande entities for santa.
+     *
+     * @Route("/papa", name="commande_papa")
+     * @Method("GET")
+     */
+    public function indexActionPapa()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $commandes = $em->getRepository('WCSHackBundle:commande')->findAll();
+        $produits = $em->getRepository('WCSHackBundle:commande')->findAll();
+        return $this->render('commande/indexpapa.html.twig', array(
+            'commandes' => $commandes,
+            'produits' => $produits,
         ));
     }
 
     /**
      * Creates a new commande entity.
      *
-     * @Route("/new", name="commande_new")
+     * @Route("/new/{id}", name="commande_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(produit $produit, Request $request)
     {
-        $commande = new Commande();
-        $form = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
-        $form->handleRequest($request);
+        $commande = new commande();
 
+        $form = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
+
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $commande->setProduit($produit);
             $em->persist($commande);
             $em->flush();
 
@@ -53,6 +75,7 @@ class commandeController extends Controller
 
         return $this->render('commande/new.html.twig', array(
             'commande' => $commande,
+            'produit'=>$produit,
             'form' => $form->createView(),
         ));
     }
@@ -63,12 +86,13 @@ class commandeController extends Controller
      * @Route("/{id}", name="commande_show")
      * @Method("GET")
      */
-    public function showAction(commande $commande)
+    public function showAction(produit $produit ,commande $commande)
     {
         $deleteForm = $this->createDeleteForm($commande);
-
+        $commande->setProduit($produit);
         return $this->render('commande/show.html.twig', array(
             'commande' => $commande,
+            'produit' => $produit,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -79,7 +103,7 @@ class commandeController extends Controller
      * @Route("/{id}/edit", name="commande_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, commande $commande)
+    public function editAction(Request $request, commande $commande, produit $produit)
     {
         $deleteForm = $this->createDeleteForm($commande);
         $editForm = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
@@ -87,12 +111,13 @@ class commandeController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $commande->setProduit($produit);
             return $this->redirectToRoute('commande_edit', array('id' => $commande->getId()));
         }
 
         return $this->render('commande/edit.html.twig', array(
             'commande' => $commande,
+            'produit' => $produit,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -133,4 +158,6 @@ class commandeController extends Controller
             ->getForm()
         ;
     }
+
+
 }
