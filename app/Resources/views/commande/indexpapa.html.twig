@@ -1,0 +1,55 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container" style="background-color: white; padding: 0;">
+    <div class="jumbotron">
+        <h1>Planning du père noël</h1>
+    </div>
+
+    <div class="planning">
+
+        {% for commande in commandes %}
+
+            <strong>Nom :</strong> {{ commande.nom }} {{ commande.prenom }}
+            <strong>Adresse :</strong> {{ commande.adresse }}
+            <ul>
+                <li>
+                    <a href="{{ path('commande_show', { 'id': commande.id }) }}">Voir la commande</a>
+                </li>
+                <li>
+                    <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Editer la commande</a>
+                </li>
+            </ul>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- <a href="{{ path('commande_new') }}">Create a new commande</a>-->
+    <div id="map" style="height:350px;width:100%; margin-bottom: 40px"></div>
+</div>
+
+{% endblock %}
+
+{% block timer %}
+
+<script>
+    function initMap() {
+        var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.856614, lng: 2.3522219000000177},
+            zoom: 3
+        });
+        {% for commande in commandes %}
+        var beachMarker = new google.maps.Marker({
+            position: {lat: {{ commande.longitude}}, lng: {{ commande.latitude}}},
+            map: map,
+        });
+        {% endfor %}
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ3dmF57Y66ggbNIKdzWvFBBwIVgthszw&callback=initMap"
+        async defer></script>
+
+{% endblock%}

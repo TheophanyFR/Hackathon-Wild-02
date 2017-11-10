@@ -26,9 +26,28 @@ class commandeController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $commandes = $em->getRepository('WCSHackBundle:commande')->findAll();
-
+        $produits = $em->getRepository('WCSHackBundle:commande')->findAll();
         return $this->render('commande/index.html.twig', array(
             'commandes' => $commandes,
+            'produits' => $produits,
+        ));
+    }
+
+    /**
+     * Lists all commande entities for santa.
+     *
+     * @Route("/papa", name="commande_papa")
+     * @Method("GET")
+     */
+    public function indexActionPapa()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $commandes = $em->getRepository('WCSHackBundle:commande')->findAll();
+        $produits = $em->getRepository('WCSHackBundle:commande')->findAll();
+        return $this->render('commande/indexpapa.html.twig', array(
+            'commandes' => $commandes,
+            'produits' => $produits,
         ));
     }
 
@@ -84,7 +103,7 @@ class commandeController extends Controller
      * @Route("/{id}/edit", name="commande_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, commande $commande)
+    public function editAction(Request $request, commande $commande, produit $produit)
     {
         $deleteForm = $this->createDeleteForm($commande);
         $editForm = $this->createForm('WCS\HackBundle\Form\commandeType', $commande);
@@ -92,12 +111,13 @@ class commandeController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $commande->setProduit($produit);
             return $this->redirectToRoute('commande_edit', array('id' => $commande->getId()));
         }
 
         return $this->render('commande/edit.html.twig', array(
             'commande' => $commande,
+            'produit' => $produit,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
