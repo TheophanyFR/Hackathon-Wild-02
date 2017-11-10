@@ -244,11 +244,14 @@ h2 {
 .legende {
     width: 15%;
     padding:5px;
+    background-color: #f0ad4e;
+    color: white;
 }
 
 .legende h3 {
     text-align: left;
     padding-left: 20px;
+    margin-top: 0;
 }
 
 .legende li {
