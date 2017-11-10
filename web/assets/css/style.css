@@ -101,7 +101,7 @@ div.container-fluid {
 }
 
 .one-produit {
-    margin: 0 15px;
+    margin: 0 15px 15px 15px;
 }
 
 .one-produit img {
@@ -164,12 +164,17 @@ a.btn.btn-default {
     margin-bottom: 5px;
 }
 
+.glyphicon-share-alt {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    margin-right: 2px;
+}
+
 /*End Catalogue*/
 
 /*Start Formulair*/
 
 .FormEnfant {
-    background-color: white;
     padding: 0;
     text-align: center;
     font-size: 1.3em;
@@ -177,7 +182,8 @@ a.btn.btn-default {
 
 .formthumb {
     background-color: white;
-    border:none;
+    width: 80%;
+    margin: auto;
 }
 
 .formulaire div {
@@ -246,8 +252,9 @@ p.credo {
     color: white;
     border:none;
     background-color: white;
-    top: 200px;
+    top: 100px;
     position: relative;
+    visibility: hidden;
 }
 
 p.delation{
@@ -316,7 +323,9 @@ p.instructions {
     margin-top: 5vh;
 }
 
-
+.recap-commande {
+    box-shadow: none;
+}
 
 /*end footer css*/
 

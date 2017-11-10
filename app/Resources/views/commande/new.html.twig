@@ -8,48 +8,54 @@
         <div class="jumbotron">
             <h1>Envoyer ma Liste</h1>
         </div>
-        <div class="thumbnail formthumb">
-            <img class="img-responsive" src="/image/{{ produit.image }}">
-            {{ produit.nom }}
-        </div>
-        <div class="row formulaire">
-            <div class="input-group">
-                {{ form_start(form) }}
+        <div class="jumbotron">
+            <div class="thumbnail formthumb recap-commande">
+                <img class="img-responsive" src="/image/{{ produit.image }}">
+                {{ produit.nom }}
             </div>
-            <div class="input-group">
-                {{ form_row(form.nom) }}
-            </div>
-            <div class="input-group">
-                {{ form_row(form.prenom) }}
-            </div>
-            <div class="input-group">
-                {{ form_row(form.adresse) }}
-            </div>
-            <div class="input-group maroufle">
-                {{ produit.id }}
-            </div>
-            <input type="button" value="Localiser" class="btn btn-local" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
-            <div id="map-canvas" style="height:350px;width:45%"></div>
+            <div class="row formulaire">
+                <div class="input-group">
+                    {{ form_start(form) }}
+                </div>
+                <div class="input-group">
+                    {{ form_row(form.nom) }}
+                </div>
+                <div class="input-group">
+                    {{ form_row(form.prenom) }}
+                </div>
+                <div class="input-group">
+                    {{ form_row(form.adresse) }}
+                </div>
+                <div class="input-group maroufle">
+                    {{ produit.id }}
+                </div>
+                <input type="button" value="Localiser" class="btn btn-local" onclick="TrouverAdresse();"
+                       style="margin-bottom: 10px"/>
+                <div id="map-canvas" style="height:350px;width:45%"></div>
 
-            <input type="submit" value="J'envoie ma Liste avec gentillesse" class="btn btn-valid" style="margin-top: 10px"/>
-            <div class="maroufle">{{ form_end(form) }}</div>
-            <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}">Retour à la Hotte</a>
+                <input type="submit" value="J'envoie ma Liste avec gentillesse" class="btn btn-valid"
+                       style="margin-top: 10px"/>
+                <div class="maroufle">{{ form_end(form) }}</div>
+                <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}"><span class="glyphicon glyphicon-share-alt"></span> Retour à la Hotte</a>
+            </div>
         </div>
     </div>
     {% include 'footer.html.twig' %}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ3dmF57Y66ggbNIKdzWvFBBwIVgthszw"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ3dmF57Y66ggbNIKdzWvFBBwIVgthszw"></script>
     <script type="text/javascript">
         var geocoder;
         var map;
+
         // initialisation de la carte Google Map de départ
         function initialiserCarte() {
             geocoder = new google.maps.Geocoder();
             // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
-            var latlng = new google.maps.LatLng(47.89333269999999,1.8950386999999864);
+            var latlng = new google.maps.LatLng(47.89333269999999, 1.8950386999999864);
             var mapOptions = {
-                zoom      : 14,
-                center    : latlng,
-                mapTypeId : google.maps.MapTypeId.ROADMAP
+                zoom: 14,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
             }
             // map-canvas est le conteneur HTML de la carte Google Map
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -58,16 +64,16 @@
         function TrouverAdresse() {
             // Récupération de l'adresse tapée dans le formulaire
             var adresse = document.getElementById('wcs_hackbundle_commande_adresse').value;
-            geocoder.geocode( { 'address': adresse}, function(results, status) {
+            geocoder.geocode({'address': adresse}, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
                     // Récupération des coordonnées GPS du lieu tapé dans le formulaire
-                    var strposition = results[0].geometry.location+"";
-                    strposition=strposition.replace('(', '');
-                    strposition=strposition.replace(')', '');
+                    var strposition = results[0].geometry.location + "";
+                    strposition = strposition.replace('(', '');
+                    strposition = strposition.replace(')', '');
                     // Affichage des coordonnées dans le <span>
-                    document.getElementById('wcs_hackbundle_commande_longitude').value=results[0].geometry.location.lat();
-                    document.getElementById('wcs_hackbundle_commande_latitude').value=results[0].geometry.location.lng();
+                    document.getElementById('wcs_hackbundle_commande_longitude').value = results[0].geometry.location.lat();
+                    document.getElementById('wcs_hackbundle_commande_latitude').value = results[0].geometry.location.lng();
                     // Création du marqueur du lieu (épingle)
                     var marker = new google.maps.Marker({
                         map: map,
@@ -78,6 +84,7 @@
                 }
             });
         }
+
         // Lancement de la construction de la carte google map
         google.maps.event.addDomListener(window, 'load', initialiserCarte);
     </script>
