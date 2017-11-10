@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Merienda', cursive;;
+}
+
+@font-face {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+*{
+    text-align: center;
+}
 body {
     background-image: url("/image/pattern.jpg");
 }
@@ -42,25 +53,30 @@ div.container-fluid {
     color: black;
 }
 
+.navbar-default .navbar-nav > li > a {
+    font-family: Merienda;
+    color: #FAF6EB;
+}
+
 .jumbotron {
     background-color: #FAF6EB;
-    color: #1B5350;
+    color: #dd4444;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .accueil-intro {
     background-color: #FAF6EB;
-    color: #1B5350;
-    height: 30vh;
+    color: #dd4444;
 }
 
 .textintro {
     text-align: center;
+    color: #1B5350;
 }
 
 #demo {
     text-align: center;
-    color: #C01920;
+    color: #1B5352;
     animation: fadein 5s;
 }
 
@@ -96,9 +112,11 @@ div.container-fluid {
 
 h1 {
     text-align: center;
+    font-family: Merienda;
 }
 
 .description {
+    font-family: 'Averia Serif Libre', cursive;
     background-color: #FAF6EB;
     color: #1B5350;
     padding: 4vh;
@@ -106,6 +124,7 @@ h1 {
 }
 
 a h3 {
+    font-family: 'Averia Serif Libre', cursive;;
     color: #1B5350;
     text-align: center;
     background-color: #FAF6EB;
@@ -122,6 +141,17 @@ a:hover {
 
 .btn-default {
     background-color: #AFCAC1;
+}
+
+.btn-default {
+    font-family: 'Averia Serif Libre', cursive;
+    color: #333;
+    background-color: #AFCAC1;
+    border-color: #ccc;
+    width: 70%;
+    height: 15%;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .btn-default:hover {
