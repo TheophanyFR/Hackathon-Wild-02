@@ -10,6 +10,16 @@ body {
     background-color: #333333;
 }
 
+/* Start navbar */
+
+
+
+/* End navbar */
+
+div.container-fluid {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
 /*Start Accueil*/
 
 .acceuil-navbar {
@@ -35,6 +45,7 @@ body {
 .jumbotron {
     background-color: #FAF6EB;
     color: #1B5350;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .accueil-intro {
@@ -68,6 +79,15 @@ body {
 
 .thumbnail {
     background-color: #FAF6EB;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.one-produit {
+    margin: 0 15px;
+}
+
+.one-produit img {
+    margin-top: 15px;
 }
 
 .centre-bouton {
@@ -79,7 +99,7 @@ h1 {
 }
 
 .description {
-    background-color: white;
+    background-color: #FAF6EB;
     color: #1B5350;
     padding: 4vh;
     margin-top: 0;
@@ -106,6 +126,10 @@ a:hover {
 
 .btn-default:hover {
     background-color: #549091;
+}
+
+a.btn.btn-default {
+    margin-bottom: 5px;
 }
 
 /*End Catalogue*/
