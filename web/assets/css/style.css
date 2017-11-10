@@ -329,3 +329,8 @@ p.instructions {
 
 /*end footer css*/
 
+.img-responsive {
+    margin-bottom: 8vh;
+    margin-top: 6vh;
+}
+
