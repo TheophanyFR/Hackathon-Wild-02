@@ -67,12 +67,13 @@ class commandeController extends Controller
      * @Route("/{id}", name="commande_show")
      * @Method("GET")
      */
-    public function showAction(commande $commande)
+    public function showAction(produit $produit ,commande $commande)
     {
         $deleteForm = $this->createDeleteForm($commande);
-
+        $commande->setProduit($produit);
         return $this->render('commande/show.html.twig', array(
             'commande' => $commande,
+            'produit' => $produit,
             'delete_form' => $deleteForm->createView(),
         ));
     }
