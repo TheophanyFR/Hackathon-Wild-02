@@ -6,15 +6,17 @@
             <h1>Planning du père noël</h1>
         </div>
 
-        <div class="planning">
+        <div class="planning" style="font-size: 1.7em">
 
             {% for commande in commandes %}
-                <div class=" {{ loop.index0>=5 ? 'hidden' }}" style="font-size: ">
+                <div class=" {{ loop.index0>=5 ? 'hidden' }}">
                     <strong>Nom :</strong> {{ commande.nom }} {{ commande.prenom }}
                     <strong>Adresse :</strong> {{ commande.adresse }}
                     <ul>
                         <li style="list-style: none">
-                            <a href="{{ path('commande_show', { 'id': commande.id }) }}">Voir la commande</a>
+
+                             <input type="submit" value="Delete" class="btn btn-warning">
+
                         </li>
                         <li style="list-style: none">
                           <!--  <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Editer la commande</a>-->
@@ -43,12 +45,13 @@
             var beachMarker = new google.maps.Marker({
                 position: {lat: {{ commande.longitude }}, lng: {{ commande.latitude }}},
                 map: map,
-                title: '{{ commande.prenom }}'
+                title: '{{ commande.prenom }}',
+                clickable: true
             });
 
             beachMarker.addListener('click', function() {
                 infowindow.setContent(beachMarker.getTitle());
-                infowindow.open(map, beachMarker);
+                infowindow.setContent(this.html);
                 infowindow.open(map, beachMarker);
             });
 
