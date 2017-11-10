@@ -15,7 +15,8 @@ body {
 }
 
 .bodyElfe {
-    background-color: #EEEEEE;
+    background-color: #b0b0b0;
+    background-image: none;
 }
 
 .bodyPapa {
@@ -231,11 +232,16 @@ p {
 }
 
 
-.timer-elfe {
+.timer-elfe, p.timer-elfe {
     color: red;
-    font-size: 15em;
+    font-size: 10em;
 }
 
+p.credo {
+    text-transform: uppercase;
+    font-size: 8em;
+    padding: 0 50px;
+}
 .maroufle {
     color: white;
     border:none;
@@ -244,10 +250,62 @@ p {
     position: relative;
 }
 
+p.delation{
+    font-size: 5em;
+}
 .page-recap {
     height:100vh;
 }
 /*start footer css*/
+
+h2 {
+    font-size: 5em;
+}
+
+.liste-commandes {
+    margin: 0 -15px 15px -15px;
+    background-color: #eae7e0;
+}
+
+.liste-commandes h2 {
+    padding-bottom: 25px;
+}
+
+.commande {
+    list-style-type: none;
+}
+
+.legende {
+    width: 15%;
+    padding:5px;
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.legende h3 {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+.legende li {
+    list-style-type: none;
+    text-align: left;
+    margin-left: -20px;
+}
+
+.margin-top {
+    margin-top: 15px;
+    background-color: #eae7e0;
+}
+
+p.instructions {
+    font-size: 5em;
+}
+
+.fufu {
+    visibility: hidden;
+}
 
 .footer {
     color: #1B5350
