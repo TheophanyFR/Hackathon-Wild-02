@@ -1,19 +1,19 @@
- body {
+body {
     background-image: url("/image/pattern.jpg");
 }
 
-.bodyElfe{
+.bodyElfe {
     background-color: #EEEEEE;
 }
 
-.bodyPapa{
+.bodyPapa {
     background-color: #333333;
 }
 
- /*Start Accueil*/
+/*Start Accueil*/
 
 .acceuil-navbar {
-    margin-left:25vw;
+    margin-left: 25vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
     font-size: 2em;
@@ -38,29 +38,33 @@
 }
 
 .accueil-intro {
-     background-color: #FAF6EB;
-     color: #1B5350;
-     height: 30vh;
- }
+    background-color: #FAF6EB;
+    color: #1B5350;
+    height: 30vh;
+}
 
 .textintro {
     text-align: center;
 }
 
- #demo {
-     text-align: center;
-     color: #C01920;
-     animation: fadein 5s;
- }
+#demo {
+    text-align: center;
+    color: #C01920;
+    animation: fadein 5s;
+}
 
- @keyframes fadein {
-     from { opacity: 0; }
-     to   { opacity: 1; }
- }
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
- /*End Accueil*/
+/*End Accueil*/
 
- /*Start Catalogue*/
+/*Start Catalogue*/
 
 .thumbnail {
     background-color: #FAF6EB;
@@ -81,7 +85,6 @@ h1 {
     margin-top: 0;
 }
 
-
 a h3 {
     color: #1B5350;
     text-align: center;
@@ -90,7 +93,7 @@ a h3 {
 
 a h3:hover {
     text-decoration: none;
-    color : #C01920;
+    color: #C01920;
 }
 
 a:hover {
@@ -105,9 +108,9 @@ a:hover {
     background-color: #549091;
 }
 
- /*End Catalogue*/
+/*End Catalogue*/
 
- /*Start Formulair*/
+/*Start Formulair*/
 
 .FormEnfant {
     background-color: white;
@@ -135,8 +138,16 @@ a:hover {
     font-size: 1.3em;
 }
 
- /*End Formulair*/
+/*End Formulair*/
 
- /*Admin*/
+/*Admin*/
 
+p {
+    margin: auto;
+    text-align: center;
+}
 
+.timer-elfe {
+    color: red;
+    font-size: 15em;
+}

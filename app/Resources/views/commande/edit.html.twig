@@ -6,7 +6,7 @@
             <div class="jumbotron">
     <h1>Commande à fabriquer</h1>
                 <h1>"{{ produit.nom }}"</h1>
-                <div>Registration closes in <span id="time">{{ produit.temps }}</span> minutes!</div>
+                <p><span id="time" class="timer-elfe">{{ produit.temps < 10 ? '0' ~ produit.temps ~ ':00' : produit.temps ~ ':00' }}</span></p>
     <ul>
         <li>
             <a href="{{ path('commande_index') }}">Back to the list</a>
@@ -20,6 +20,7 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
