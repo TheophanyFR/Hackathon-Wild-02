@@ -2,6 +2,9 @@
     background-image: url("/image/pattern.jpg");
 }
 
+
+ /*Start Accueil*/
+
 .acceuil-navbar {
     margin-left:25vw;
     margin-top: 2vh;
@@ -26,6 +29,31 @@
     background-color: #FAF6EB;
     color: #1B5350;
 }
+
+.accueil-intro {
+     background-color: #FAF6EB;
+     color: #1B5350;
+     height: 30vh;
+ }
+
+.textintro {
+    text-align: center;
+}
+
+ #demo {
+     text-align: center;
+     color: #C01920;
+     animation: fadein 5s;
+ }
+
+ @keyframes fadein {
+     from { opacity: 0; }
+     to   { opacity: 1; }
+ }
+
+ /*End Accueil*/
+
+ /*Start Catalogue*/
 
 .thumbnail {
     background-color: #FAF6EB;
@@ -70,6 +98,10 @@ a:hover {
     background-color: #549091;
 }
 
+ /*End Catalogue*/
+
+ /*Start Formulair*/
+
 .FormEnfant {
     background-color: white;
     padding: 0;
@@ -95,4 +127,6 @@ a:hover {
 .formulaire .btn {
     font-size: 1.3em;
 }
+
+ /*End Formulair*/
 
