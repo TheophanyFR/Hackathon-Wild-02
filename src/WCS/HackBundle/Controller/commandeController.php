@@ -70,7 +70,7 @@ class commandeController extends Controller
             $em->persist($commande);
             $em->flush();
 
-            return $this->redirectToRoute('commande_show', array('id' => $commande->getId()));
+            return $this->redirectToRoute('commande_show', array('id' => $produit->getId()));
         }
 
         return $this->render('commande/new.html.twig', array(

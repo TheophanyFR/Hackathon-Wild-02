@@ -6,18 +6,15 @@
 
     <div class="container FormEnfant">
         <div class="jumbotron">
-            <h1>Soumettre la commande</h1>
+            <h1>Envoyer ma Liste</h1>
         </div>
-        <div class="thumbnail">
+        <div class="thumbnail formthumb">
             <img class="img-responsive" src="/image/{{ produit.image }}">
             {{ produit.nom }}
         </div>
         <div class="row formulaire">
             <div class="input-group">
                 {{ form_start(form) }}
-            </div>
-            <div class="input-group">
-                {{ produit.id }}
             </div>
             <div class="input-group">
                 {{ form_row(form.nom) }}
@@ -28,13 +25,15 @@
             <div class="input-group">
                 {{ form_row(form.adresse) }}
             </div>
-            <input type="button" value="Localiser" class="btn btn-warning" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
+            <div class="input-group maroufle">
+                {{ produit.id }}
+            </div>
+            <input type="button" value="Localiser" class="btn btn-local" onclick="TrouverAdresse();" style="margin-bottom: 10px"/>
             <div id="map-canvas" style="height:350px;width:45%"></div>
 
-            <input type="submit" value="Soumettre" class="btn btn-success" style="margin-top: 10px"/>
-            {{ form_end(form) }}
-            <a class="btn btn-default btn-lg" href="{{ path('produit_index') }}">Retour au catalogue</a>
-
+            <input type="submit" value="J'envoie ma Liste avec gentillesse" class="btn btn-valid" style="margin-top: 10px"/>
+            <div class="maroufle">{{ form_end(form) }}</div>
+            <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}">Retour à la Hotte</a>
         </div>
     </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ3dmF57Y66ggbNIKdzWvFBBwIVgthszw"></script>
