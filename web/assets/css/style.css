@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'Merienda', cursive;;
+}
+
+@font-face {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+*{
+    text-align: center;
+}
 body {
     background-image: url("/image/pattern.jpg");
-    margin-bottom: -20px;
-
+    z-index: 0;
 }
 
 .bodyElfe {
@@ -10,6 +20,16 @@ body {
 
 .bodyPapa {
     background-color: #333333;
+}
+
+/* Start navbar */
+
+
+
+/* End navbar */
+
+div.container-fluid {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 /*Start Accueil*/
@@ -34,24 +54,30 @@ body {
     color: black;
 }
 
+.navbar-default .navbar-nav > li > a {
+    font-family: Merienda;
+    color: #FAF6EB;
+}
+
 .jumbotron {
     background-color: #FAF6EB;
-    color: #1B5350;
+    color: #dd4444;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .accueil-intro {
     background-color: #FAF6EB;
-    color: #1B5350;
-    height: 30vh;
+    color: #dd4444;
 }
 
 .textintro {
     text-align: center;
+    color: #1B5350;
 }
 
 #demo {
     text-align: center;
-    color: #C01920;
+    color: #1B5352;
     animation: fadein 5s;
 }
 
@@ -70,6 +96,15 @@ body {
 
 .thumbnail {
     background-color: #FAF6EB;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.one-produit {
+    margin: 0 15px;
+}
+
+.one-produit img {
+    margin-top: 15px;
 }
 
 .centre-bouton {
@@ -78,16 +113,19 @@ body {
 
 h1 {
     text-align: center;
+    font-family: Merienda;
 }
 
 .description {
-    background-color: white;
+    font-family: 'Averia Serif Libre', cursive;
+    background-color: #FAF6EB;
     color: #1B5350;
     padding: 4vh;
     margin-top: 0;
 }
 
 a h3 {
+    font-family: 'Averia Serif Libre', cursive;;
     color: #1B5350;
     text-align: center;
     background-color: #FAF6EB;
@@ -106,8 +144,23 @@ a:hover {
     background-color: #AFCAC1;
 }
 
+.btn-default {
+    font-family: 'Averia Serif Libre', cursive;
+    color: #333;
+    background-color: #AFCAC1;
+    border-color: #ccc;
+    width: 70%;
+    height: 15%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 .btn-default:hover {
     background-color: #549091;
+}
+
+a.btn.btn-default {
+    margin-bottom: 5px;
 }
 
 /*End Catalogue*/
@@ -119,6 +172,11 @@ a:hover {
     padding: 0;
     text-align: center;
     font-size: 1.3em;
+}
+
+.formthumb {
+    background-color: white;
+    border:none;
 }
 
 .formulaire div {
@@ -137,6 +195,23 @@ a:hover {
 
 .formulaire .btn {
     font-size: 1.3em;
+}
+
+.btn-valid {
+    margin-top: 5vh;
+    background-color: #C01920;
+    color: white;
+}
+
+.btn-retour {
+    margin-bottom: 10vh;
+    background-color: #AFCAC1;
+    color: white;
+}
+
+.btn-local {
+    background-color: #AFCAC1;
+    color: white;
 }
 
 /*End Formulair*/
@@ -161,7 +236,17 @@ p {
     font-size: 15em;
 }
 
+.maroufle {
+    color: white;
+    border:none;
+    background-color: white;
+    top: 200px;
+    position: relative;
+}
 
+.page-recap {
+    height:100vh;
+}
 /*start footer css*/
 
 .footer {
