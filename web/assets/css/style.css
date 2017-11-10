@@ -11,7 +11,7 @@
 }
 body {
     background-image: url("/image/pattern.jpg");
-    z-index: 0;
+    margin-bottom: -200px;
 }
 
 .bodyElfe {
@@ -247,11 +247,12 @@ p {
 .page-recap {
     height:100vh;
 }
+/*start footer css*/
 
-.text-recap {
-    text-align: center;
+.footer {
+    color: #1B5350
 }
 
-.thumrecap {
-    border:none;
-}
+
+
+/*end footer css*/
