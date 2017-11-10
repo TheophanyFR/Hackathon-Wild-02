@@ -145,6 +145,7 @@ p {
     margin: auto;
     text-align: center;
 }
+
 .planning {
     background-color: white;
     padding: 0;
@@ -152,8 +153,10 @@ p {
     font-size: 1.3em;
 }
 
+
 .timer-elfe {
     color: red;
     font-size: 15em;
 }
+
 
