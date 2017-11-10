@@ -1,5 +1,7 @@
 body {
     background-image: url("/image/pattern.jpg");
+    margin-bottom: -20px;
+
 }
 
 .bodyElfe {
@@ -160,3 +162,12 @@ p {
 }
 
 
+/*start footer css*/
+
+.footer {
+    color: #1B5350
+}
+
+
+
+/*end footer css*/
