@@ -14,28 +14,24 @@
                 {{ produit.nom }}
             </div>
             <div class="row formulaire">
-                <div class="input-group">
+                {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
                     {{ form_start(form) }}
-                </div>
-                <div class="input-group">
+
+
                     {{ form_row(form.nom) }}
-                </div>
-                <div class="input-group">
-                    {{ form_row(form.prenom) }}
-                </div>
-                <div class="input-group">
+                {{ form_row(form.prenom) }}
                     {{ form_row(form.adresse) }}
-                </div>
-                <div class="input-group maroufle">
-                    {{ produit.id }}
-                </div>
+                    <div class="input-group maroufle">{{ form_row(form.statut) }}</div>
+                {#{{ produit.id }}#}
+
                 <input type="button" value="Localiser" class="btn btn-local" onclick="TrouverAdresse();"
                        style="margin-bottom: 10px"/>
                 <div id="map-canvas" style="height:350px;width:45%"></div>
 
                 <input type="submit" value="J'envoie ma Liste avec gentillesse" class="btn btn-valid"
                        style="margin-top: 10px"/>
-                <div class="maroufle">{{ form_end(form) }}</div>
+               {{ form_end(form) }}
                 <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}"><span class="glyphicon glyphicon-share-alt"></span> Retour à la Hotte</a>
             </div>
         </div>
