@@ -22,6 +22,12 @@ class produit
     private $id;
 
     /**
+     * @var int
+     * @ORM\OneToMany(targetEntity="commande", mappedBy="id")
+     */
+    private $commande;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="text", nullable=true)
@@ -160,4 +166,131 @@ class produit
     }
 
 
+
+    /**
+     * Set produitId
+     *
+     * @param \WCS\HackBundle\Entity\panier $produitId
+     *
+     * @return produit
+     */
+    public function setProduitId(\WCS\HackBundle\Entity\panier $produitId)
+    {
+        $this->produit_id = $produitId;
+
+        return $this;
+    }
+
+    /**
+     * Get produitId
+     *
+     * @return \WCS\HackBundle\Entity\panier
+     */
+    public function getProduitId()
+    {
+        return $this->produit_id;
+    }
+
+    /**
+     * Set produit
+     *
+     * @param \WCS\HackBundle\Entity\panier $produit
+     *
+     * @return produit
+     */
+    public function setProduit(\WCS\HackBundle\Entity\panier $produit)
+    {
+        $this->produit = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Get produit
+     *
+     * @return \WCS\HackBundle\Entity\panier
+     */
+    public function getProduit()
+    {
+        return $this->produit;
+    }
+
+    /**
+     * Set panier
+     *
+     * @param \WCS\HackBundle\Entity\panier $panier
+     *
+     * @return produit
+     */
+    public function setPanier(\WCS\HackBundle\Entity\panier $panier)
+    {
+        $this->panier = $panier;
+
+        return $this;
+    }
+
+    /**
+     * Get panier
+     *
+     * @return \WCS\HackBundle\Entity\panier
+     */
+    public function getPanier()
+    {
+        return $this->panier;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param integer $commande
+     *
+     * @return produit
+     */
+    public function setCommande($commande)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return integer
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add commande
+     *
+     * @param \WCS\HackBundle\Entity\commande $commande
+     *
+     * @return produit
+     */
+    public function addCommande(\WCS\HackBundle\Entity\commande $commande)
+    {
+        $this->commande[] = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Remove commande
+     *
+     * @param \WCS\HackBundle\Entity\commande $commande
+     */
+    public function removeCommande(\WCS\HackBundle\Entity\commande $commande)
+    {
+        $this->commande->removeElement($commande);
+    }
 }

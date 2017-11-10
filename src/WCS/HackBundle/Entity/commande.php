@@ -63,11 +63,12 @@ class commande
      * @ORM\Column(name="statut", type="integer")
      */
     private $statut;
+
     /**
-     * @ORM\OneToOne(targetEntity="panier")
-     * @ORM\JoinColumn(name="panier_id", referencedColumnName="id")
+     * @var int
+     * @ORM\ManyToOne(targetEntity="produit", inversedBy="id")
      */
-    private $panier;
+    private $produit;
 
 
 
@@ -247,5 +248,60 @@ class commande
     public function getPanier()
     {
         return $this->panier;
+    }
+
+    /**
+     * Set produit
+     *
+     * @param integer $produit
+     *
+     * @return commande
+     */
+    public function setProduit($produit)
+    {
+        $this->produit = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Get produit
+     *
+     * @return integer
+     */
+    public function getProduit()
+    {
+        return $this->produit;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add produit
+     *
+     * @param \WCS\HackBundle\Entity\produit $produit
+     *
+     * @return commande
+     */
+    public function addProduit(\WCS\HackBundle\Entity\produit $produit)
+    {
+        $this->produit[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit
+     *
+     * @param \WCS\HackBundle\Entity\produit $produit
+     */
+    public function removeProduit(\WCS\HackBundle\Entity\produit $produit)
+    {
+        $this->produit->removeElement($produit);
     }
 }
