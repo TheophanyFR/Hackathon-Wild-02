@@ -4,20 +4,18 @@
     {% include 'header.html.twig' %}
 
     <div class="container">
-        <div class="row">
-            <div class="jumbotron page-recap">
+            <div class=" row jumbotron page-recap">
                 <h1>Ce que je reçois pour Noël</h1>
-                <div class="thumbnail thumrecap">
+                <div class="col-lg-4 thumbnail thumrecap">
                     <img class="img-responsive" src="/image/{{ produit.image }}">
                 </div>
-            <div class="col-lg-offset-4 col-lg-4 text-recap">
-            <h2>Patience Noël arrive à grand pas !</h2>
-            <h2 id="demo"></h2>
+                <div class="col-lg-8 text-recap">
+                    <h2 class="margin-top-title">Patience Noël arrive à grand pas !</h2>
+                    <h2 id="demo"></h2>
                     <a class="btn btn-retour btn-lg" href="{{ path('produit_index') }}">Retour à la Hotte</a>
+                </div>
             </div>
-            </div>
-        </div>
-        </div>
+    </div>
 
 
     {% block timer %}
@@ -26,7 +24,7 @@
             var countDownDate = new Date("Dec 24, 2017 23:59:59").getTime();
 
             // Update the count down every 1 second
-            var x = setInterval(function() {
+            var x = setInterval(function () {
 
                 // Get todays date and time
                 var now = new Date().getTime();
