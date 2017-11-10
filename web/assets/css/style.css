@@ -112,7 +112,6 @@ a:hover {
 .FormEnfant {
     background-color: white;
     padding: 0;
-
     text-align: center;
     font-size: 1.3em;
 }
@@ -135,8 +134,16 @@ a:hover {
     font-size: 1.3em;
 }
 
+
  /*End Formulair*/
 
  /*Admin*/
+
+.planning {
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
 
 
