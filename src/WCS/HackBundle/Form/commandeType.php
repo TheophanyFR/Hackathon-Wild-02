@@ -28,7 +28,7 @@ class commandeType extends AbstractType
             ))
             ->add('statut', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
                 'label' => " ",
-                'attr' => array('class' => 'hidden', 'value' => '0')
+                'attr' => array('value' => '0')
             ));
     }
 

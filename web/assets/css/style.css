@@ -115,7 +115,6 @@ a:hover {
 .FormEnfant {
     background-color: white;
     padding: 0;
-
     text-align: center;
     font-size: 1.3em;
 }
@@ -146,8 +145,15 @@ p {
     margin: auto;
     text-align: center;
 }
+.planning {
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
 
 .timer-elfe {
     color: red;
     font-size: 15em;
 }
+
