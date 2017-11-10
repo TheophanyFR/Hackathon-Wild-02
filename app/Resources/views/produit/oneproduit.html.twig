@@ -17,7 +17,7 @@
                 <h3 class="description">{{ produit.description }}</h3>
                 <form action="{{ path('commande_new', {'id':produit.id}) }}" method="get">
                 <a class="btn btn-default"
-                   href="{{ path('commande_new') }}"><span class="glyphicon glyphicon-gift"></span> Prendre ce cadeau</a>
+                   href="/commande/new/{{  produit.id }}"><span class="glyphicon glyphicon-gift"></span> Prendre ce cadeau</a>
                 </form>
                 <a class="btn btn-default" href="{{ path('produit_index') }}">Retour au catalogue</a>
             </div>
