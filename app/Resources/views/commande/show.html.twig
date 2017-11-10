@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Commande</h1>
 
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <h1>Commande</h1>
     <table>
         <tbody>
+        <tr>
+            <th>Produit</th>
+            <td>{{ produit.nom }}</td>
+        </tr>
             <tr>
                 <th>Id</th>
                 <td>{{ commande.id }}</td>
@@ -33,6 +40,7 @@
                 <th>Statut</th>
                 <td>{{ commande.statut }}</td>
             </tr>
+
         </tbody>
     </table>
 
@@ -49,4 +57,7 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
