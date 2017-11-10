@@ -1,23 +1,26 @@
-{% extends 'base.html.twig' %}
+{% extends 'elfeBase.html.twig' %}
 
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="jumbotron">
-    <h1>Commande à fabriquer</h1>
-                <h1>"{{ produit.nom }}"</h1>
-                <p><span id="time" class="timer-elfe">{{ produit.temps < 10 ? '0' ~ produit.temps ~ ':00' : produit.temps ~ ':00' }}</span></p>
-    <ul>
-        <li>
-            <a href="{{ path('commande_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(edit_form) }}
-            {{ form_widget(edit_form) }}
-            <input type="submit" value="Edit" />
-            {{ form_end(edit_form) }}
-        </li>
-    </ul>
+            <div class="jumbotron margin-top">
+                <p class="instructions">Matricule 628, vous avez :</p>
+                <p class="timer-elfe"><span id="time">
+                        {{ produit.temps < 10 ? '0' ~ produit.temps ~ ':00' : produit.temps ~ ':00' }}</span>
+                    minutes
+                </p>
+                <p class="instructions">Fabriquez "{{ produit.nom }}"</p>
+                <ul class="commande">
+                    <li class="fufu">
+                        <a href="{{ path('commande_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        <div class="fufu">{{ form_start(edit_form) }}</div>
+                        <div class="fufu">{{ form_widget(edit_form) }}</div>
+                        <input type="submit" value="Edit"/>
+                        {{ form_end(edit_form) }}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
