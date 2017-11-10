@@ -34,6 +34,24 @@ class commandeController extends Controller
     }
 
     /**
+     * Lists all commande entities for santa.
+     *
+     * @Route("/papa", name="commande_papa")
+     * @Method("GET")
+     */
+    public function indexActionPapa()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $commandes = $em->getRepository('WCSHackBundle:commande')->findAll();
+        $produits = $em->getRepository('WCSHackBundle:commande')->findAll();
+        return $this->render('commande/indexpapa.html.twig', array(
+            'commandes' => $commandes,
+            'produits' => $produits,
+        ));
+    }
+
+    /**
      * Creates a new commande entity.
      *
      * @Route("/new/{id}", name="commande_new")

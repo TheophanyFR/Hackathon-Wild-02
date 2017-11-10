@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Commandes list</h1>
+
+                {% for commande in commandes %}
+                {% if commande.statut > 0 %}
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ commande.id }}</td>
+                        <td>{{ commande.statut }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Prendre cette commande de merde </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                    {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

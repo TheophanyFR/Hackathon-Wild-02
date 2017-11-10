@@ -12,20 +12,20 @@
             <a href="{{ path('commande_index') }}">Back to the list</a>
         </li>
         <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Edit" />
+            {{ form_end(edit_form) }}
         </li>
     </ul>
             </div>
         </div>
     </div>
-
     <script>
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
             setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
+                minutes = parseInt(timer / 60, 10)
                 seconds = parseInt(timer % 60, 10);
 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -45,4 +45,5 @@
             startTimer(fiveMinutes, display);
         });
     </script>
+
 {% endblock %}
