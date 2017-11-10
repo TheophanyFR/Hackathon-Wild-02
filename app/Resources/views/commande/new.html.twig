@@ -8,14 +8,16 @@
         <div class="jumbotron">
             <h1>Soumettre la commande</h1>
         </div>
-
+        <div class="thumbnail">
+            <img class="img-responsive" src="/image/{{ produit.image }}">
+            {{ produit.nom }}
+        </div>
         <div class="row formulaire">
             <div class="input-group">
                 {{ form_start(form) }}
             </div>
             <div class="input-group">
-                <img class="img-responsive" src="/image/{{ produit.image }}">
-                {{ produit.nom }}
+                {{ produit.id }}
             </div>
             <div class="input-group">
                 {{ form_row(form.nom) }}

@@ -47,7 +47,7 @@ class commandeController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $commande->setProduit($produit->getId());
+            $commande->setProduit($produit);
             $em->persist($commande);
             $em->flush();
 
