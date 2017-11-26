@@ -1,0 +1,60 @@
+{% extends 'elfeBase.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron margin-top">
+                <h1>Elfes, au travail, le Père Noël a besoin de vous !</h1>
+                <div class="row">
+                    <p class="col-md-3 credo">Q u o t a</p>
+                    <img class="col-md-6" src="/image/bigbrother.jpg">
+                    <p class="col-md-3 credo">O r d r e</p>
+                </div>
+                <p class="delation">Signalez tout collègue au comportement suspect</p>
+
+            </div>
+        </div>
+
+        <div class="jumbotron liste-commandes">
+            <h2>Commandes en attente</h2>
+            <div class="alert alert-warning legende">
+            <h3>Légende</h3>
+                <ul>
+                    <li>0 = à préparer</li>
+                    <li>1 = en préparation</li>
+                    <li>2 = prête à livrer</li>
+                </ul>
+            </div>
+            {% for commande in commandes %}
+            {% if commande.statut == 0 %}
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Numéro de commande</th>
+                    <th>Statut</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ commande.id }}</td>
+                    <td>{{ commande.statut }}</td>
+                    <td>
+                        <ul class="commande">
+                            <li>
+                                <a class="btn btn-warning"
+                                   href="{{ path('commande_edit', { 'id': commande.id }) }}">Préparer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+                {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

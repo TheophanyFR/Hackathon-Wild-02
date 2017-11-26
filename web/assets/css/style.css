@@ -1,0 +1,343 @@
+@font-face {
+    font-family: 'Merienda', cursive;;
+}
+
+@font-face {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+*{
+    text-align: center;
+}
+body {
+    background-image: url("/image/pattern.jpg");
+    margin-bottom: -200px;
+}
+
+.bodyElfe {
+    background-color: #b0b0b0;
+    background-image: none;
+}
+
+.bodyPapa {
+    background-image: url("/image/papa_pattern.jpg");
+}
+
+/* Start navbar */
+
+
+
+/* End navbar */
+
+div.container-fluid {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/*Start Accueil*/
+
+.acceuil-navbar {
+    margin-left: 25vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 2em;
+}
+
+.catalogue-navbar {
+    margin-right: 25vw;
+    font-size: 2em;
+    margin-top: 2vh;
+}
+
+.navbar {
+    background-color: #AFCAC1;
+    border: none;
+    border-radius: 0;
+    color: black;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: Merienda;
+    color: #FAF6EB;
+}
+
+.jumbotron {
+    background-color: #FAF6EB;
+    color: #dd4444;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.max-view-height {
+    height: 100vh;
+}
+
+.accueil-intro {
+    background-color: #FAF6EB;
+    color: #dd4444;
+}
+
+.textintro {
+    text-align: center;
+    color: #1B5350;
+    font-family: Merienda;
+}
+
+.margin-top-title {
+    margin-top: 80px;
+}
+
+#demo {
+    text-align: center;
+    color: #1B5352;
+    animation: fadein 5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*End Accueil*/
+
+/*Start Catalogue*/
+
+.thumbnail {
+    background-color: #FAF6EB;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.one-produit {
+    margin: 0 15px 15px 15px;
+}
+
+.one-produit img {
+    margin-top: 15px;
+}
+
+.centre-bouton {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: Merienda;
+}
+
+.description {
+    font-family: 'Averia Serif Libre', cursive;
+    background-color: #FAF6EB;
+    color: #1B5350;
+    padding: 4vh;
+    margin-top: 0;
+}
+
+a h3 {
+    font-family: 'Averia Serif Libre', cursive;;
+    color: #1B5350;
+    text-align: center;
+    background-color: #FAF6EB;
+}
+
+a h3:hover {
+    text-decoration: none;
+    color: #C01920;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-default {
+    background-color: #AFCAC1;
+}
+
+.btn-default {
+    font-family: 'Averia Serif Libre', cursive;
+    color: #333;
+    background-color: #AFCAC1;
+    border-color: #ccc;
+    width: 70%;
+    height: 15%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.btn-default:hover {
+    background-color: #549091;
+}
+
+a.btn.btn-default {
+    margin-bottom: 5px;
+}
+
+.glyphicon-share-alt {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    margin-right: 2px;
+}
+
+/*End Catalogue*/
+
+/*Start Formulair*/
+
+.FormEnfant {
+    padding: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.formthumb {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+}
+
+.formulaire div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.formulaire label {
+    margin: 0 10px 0 0;
+    font-size: 1.5em;
+}
+
+.formulaire input {
+    margin: 10px;
+}
+
+.formulaire .btn {
+    font-size: 1.3em;
+}
+
+.btn-valid {
+    margin-top: 5vh;
+    background-color: #C01920;
+    color: white;
+}
+
+.btn-retour {
+    margin-bottom: 10vh;
+    background-color: #AFCAC1;
+    color: white;
+}
+
+.btn-local {
+    background-color: #AFCAC1;
+    color: white;
+}
+
+/*End Formulair*/
+
+/*Admin*/
+
+p {
+    margin: auto;
+    text-align: center;
+}
+
+.planning {
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+
+.timer-elfe, p.timer-elfe {
+    color: red;
+    font-size: 10em;
+}
+
+p.credo {
+    text-transform: uppercase;
+    font-size: 8em;
+    padding: 0 50px;
+}
+.maroufle {
+    color: white;
+    border:none;
+    background-color: white;
+    top: 100px;
+    position: relative;
+    visibility: hidden;
+}
+
+p.delation{
+    font-size: 5em;
+}
+
+/*start footer css*/
+
+h2 {
+    font-size: 5em;
+}
+
+.liste-commandes {
+    margin: 0 -15px 15px -15px;
+    background-color: #eae7e0;
+}
+
+.liste-commandes h2 {
+    padding-bottom: 25px;
+}
+
+.commande {
+    list-style-type: none;
+}
+
+.legende {
+    width: 15%;
+    padding:5px;
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.legende h3 {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+.legende li {
+    list-style-type: none;
+    text-align: left;
+    margin-left: -20px;
+}
+
+.margin-top {
+    margin-top: 15px;
+    background-color: #eae7e0;
+}
+
+p.instructions {
+    font-size: 5em;
+}
+
+.fufu {
+    visibility: hidden;
+}
+
+.footer {
+    color: #1B5350
+}
+
+.thumrecap {
+    border:none;
+    margin-top: 5vh;
+}
+
+.recap-commande {
+    box-shadow: none;
+}
+
+/*end footer css*/
+
+.img-responsive {
+    margin-bottom: 8vh;
+    margin-top: 6vh;
+}
+

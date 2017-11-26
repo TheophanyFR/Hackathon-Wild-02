@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>{{ produit.nom }}</h1>
+    </div>
+        <div class="row">
+            <div class="thumbnail one-produit">
+                <img class="img-responsive" src="/image/{{ produit.image }}">
+                <h3 class="description">{{ produit.description }}</h3>
+                <form action="{{ path('commande_new', {'id':produit.id}) }}" method="get">
+                <a class="btn btn-default"
+                   href="/commande/new/{{  produit.id }}"><span class="glyphicon glyphicon-gift"></span> Je veux ce cadeau</a>
+                </form>
+                <a class="btn btn-default" href="{{ path('produit_index') }}"><span class="glyphicon glyphicon-share-alt"></span>Retour au catalogue</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

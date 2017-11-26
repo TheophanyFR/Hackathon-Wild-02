@@ -1,0 +1,53 @@
+{% extends 'elfeBase.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron margin-top">
+                <p class="instructions">Matricule 628, vous avez :</p>
+                <p class="timer-elfe"><span id="time">
+                        {{ produit.temps < 10 ? '0' ~ produit.temps ~ ':00' : produit.temps ~ ':00' }}</span>
+                    minutes
+                </p>
+                <p class="instructions">Fabriquez "{{ produit.nom }}"</p>
+                <ul class="commande">
+                    <li class=>
+                        <a href="{{ path('commande_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        {{ form_start(edit_form) }}
+                        {{ form_widget(edit_form) }}
+                        <input type="submit" value="Edit"/>
+                        {{ form_end(edit_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.text(minutes + ":" + seconds);
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        jQuery(function ($) {
+            var fiveMinutes = 60 * {{ produit.temps }},
+                display = $('#time');
+            startTimer(fiveMinutes, display);
+        });
+    </script>
+
+{% endblock %}
